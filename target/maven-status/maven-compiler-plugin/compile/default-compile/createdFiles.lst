@@ -1,0 +1,5 @@
+com\book\Controller\BookController.class
+com\book\Repository\BookRepository.class
+com\book\BookApplication.class
+com\book\Entity\Book.class
+com\book\service\Bookservice.class
