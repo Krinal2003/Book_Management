@@ -24,11 +24,8 @@
                 <tr>
                     <td><label>Format:</label></td>
                     <td>
-                        <select name="formate">
-                            <option value="Paperback">Paperback</option>
-                            <option value="Hardcover">Hardcover</option>
-                            <option value="Ebook">Ebook</option>
-                        </select>
+                        <select name="format">
+           					 <option th:each="format : ${formats}" th:value="${format}" th:text="${format}"></option> </select>
                     </td>
                 </tr>
                 <tr>

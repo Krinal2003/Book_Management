@@ -27,5 +27,8 @@ public class Bookservice{
 		public Book findById(Long id) {
 		    return bookRepository.findById(id).orElse(null);
 		}
+		public List<String> getAllFormats(){
+			return bookRepository.findDistinctFormats();
+		}
 
 }

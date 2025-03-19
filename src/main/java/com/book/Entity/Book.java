@@ -18,9 +18,9 @@ public class Book{
 	private Long quantity;
 	private String format;
 
-	public Book(Long id, String title, String author, double price,Long quantity,String format) {
+	public Book(String title, String author, double price,Long quantity,String format) {
 		super();
-		this.id = id;
+		
 		this.title = title;
 		this.author = author;
 		this.price = price;

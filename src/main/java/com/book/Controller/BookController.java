@@ -1,17 +1,23 @@
 package com.book.Controller;
 import java.util.List;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.book.Entity.Book;
 import com.book.service.Bookservice;
 
 @Controller
-//@RestController use json
 @RequestMapping("/books")
 public class BookController{
 
@@ -22,7 +28,8 @@ public class BookController{
 	}
 	
 	  @GetMapping("/form")
-	    public String showBookForm() {
+	    public String showBookForm(Model model) {
+		  model.addAttribute("formats", bookService.getAllFormats());
 	        return "book-form";  
 	    }
 	  @PostMapping("/books")
@@ -46,6 +53,7 @@ public class BookController{
 }
 
 //--------- All JSon code complitly run----------//
+//@RestController use json
 //	@GetMapping("/")
 //	public List<Book> getAllBooks(){
 //		return bookService.getAllBooks();
